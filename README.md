@@ -3,5 +3,5 @@ fanbox支援者取得ブックマークレット
 
 ### 使い方
 ```javascript
-javascript:import("https://raw.githubusercontent.com/0kq-github/fanbox-supporters/main/fanbox-supporters.js").then(m=>{m.main()}).catch(e=>alert(`エラー (${e})`));
+javascript:import("https://0kq-github.github.io/fanbox-supporters/fanbox-supporters.js").then(m=>{m.main()}).catch(e=>alert(`エラー (${e})`));
 ```

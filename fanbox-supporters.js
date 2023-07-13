@@ -4,12 +4,24 @@ function main() {
         const supporters = document.querySelectorAll("a[href*='/manage/relationships/']");
         supporters.forEach((element) => {
             const url = element.href.split("/");
-            result[url[url.length - 1]] = {
-                "name":element.parentNode.parentNode.querySelectorAll("div > div")[0].innerText,
-                "status":element.parentNode.parentNode.querySelectorAll("div > div")[1].innerText,
-                "since":element.parentNode.parentNode.querySelectorAll("div > div")[3].innerText,
-                "memo":element.parentNode.parentNode.querySelectorAll("div > div")[4].innerText
+            if (location.href.match("https://www.fanbox.cc/manage/relationships.*planId")) {
+                result[url[url.length - 1]] = {
+                    "name":element.parentNode.parentNode.querySelectorAll("div > div")[0].innerText,
+                    "status":element.parentNode.parentNode.querySelectorAll("div > div")[1].innerText,
+                    "total":element.parentNode.parentNode.querySelectorAll("div > div")[3].innerText,
+                    "since":element.parentNode.parentNode.querySelectorAll("div > div")[4].innerText,
+                    "memo":element.parentNode.parentNode.querySelectorAll("div > div")[5].innerText
+                }
+            } else {
+                result[url[url.length - 1]] = {
+                    "name":element.parentNode.parentNode.querySelectorAll("div > div")[0].innerText,
+                    "status":element.parentNode.parentNode.querySelectorAll("div > div")[1].innerText,
+                    "total":"",
+                    "since":element.parentNode.parentNode.querySelectorAll("div > div")[3].innerText,
+                    "memo":element.parentNode.parentNode.querySelectorAll("div > div")[4].innerText
+                }
             }
+
         });
         const blob = new Blob([JSON.stringify(result)], { type: "text/plain" });
         const link = document.createElement("a");

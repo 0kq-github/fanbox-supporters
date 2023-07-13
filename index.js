@@ -6,7 +6,7 @@ javascript: (
             let url = element.href.split("/");
             result[url[url.length - 1]] = {
                 "status":element.parentNode.parentNode.querySelectorAll("div > div")[1].innerText,
-                "date":element.parentNode.parentNode.querySelectorAll("div > div")[3].innerText
+                "since":element.parentNode.parentNode.querySelectorAll("div > div")[3].innerText
             }
         });
         let blob = new Blob([JSON.stringify(result)], { type: "text/plain" });

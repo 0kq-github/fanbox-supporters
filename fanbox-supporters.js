@@ -1,4 +1,8 @@
 function main() {
+    if (!location.href.match("https://www.fanbox.cc/manage/relationships")) {
+        alert("支援者管理ページを開いて実行してください");
+        return;
+    }
     const result = {};
     const supporters = document.querySelectorAll("a[href*='/manage/relationships/']");
     supporters.forEach((element) => {
@@ -14,7 +18,7 @@ function main() {
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "fanbox.json"; link.click();
-    alert("Downloading " + supporters.length.toString() + " Supporters...")
+    alert("支援者数 " + supporters.length.toString() + " 人")
 }
 
 export { main };

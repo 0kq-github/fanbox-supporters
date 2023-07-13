@@ -16,3 +16,5 @@ function main() {
     link.download = "fanbox.json"; link.click();
     alert("Downloading " + supporters.length.toString() + " Supporters...")
 }
+
+export { main };

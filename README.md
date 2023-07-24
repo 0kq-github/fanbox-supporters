@@ -18,3 +18,8 @@ fanbox支援者一覧取得ブックマークレット
 ```javascript
 javascript:import("https://0kq-github.github.io/fanbox-supporters/fanbox-supporters.js").then(m=>{m.main()}).catch(e=>alert(`エラー (${e})`));
 ```
+
+### Fanbox APIを直接叩いてレスポンスを保存する場合
+```javascript
+javascript:import("https://0kq-github.github.io/fanbox-supporters/fanbox-supporters-withapi.js").then(m=>{m.main()}).catch(e=>alert(`エラー (${e})`));
+```

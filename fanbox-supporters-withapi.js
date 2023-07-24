@@ -18,7 +18,12 @@ function main() {
             "mode": "cors",
             "credentials": "include"
         });
-        return await resp.json();
+        rtesul = await resp.json();
+        const blob = new Blob([JSON.stringify(result)], { type: "text/plain" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "fanbox.json"; link.click();
+        alert("支援者数 " + supporters.length.toString() + " 人")
     } else {
         alert("支援者管理ページを開いて実行してください");
     }
